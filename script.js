@@ -7,6 +7,7 @@ let guessMemberEl = document.getElementById("answer3");
 let getUpAlbum = document.getElementById("answer4");
 let finalScoreSpan = document.getElementById("finalScore");
 let message = document.getElementById("quizFeedback");
+let nwjsOverallScore = document.getElementById("finalPercentage");
 
 // Score count variable
 let finalScore = 0;
@@ -23,28 +24,28 @@ function markQuizBtn() {
 
   if (nwjs1 == 5) {
     memberEl.innerHTML = "correct";
-    document.getElementById("answer").style.color = "green";
-    document.getElementById("question1").style.border = "2px solid green";
+    answer.style.color = "green";
+    question1.style.border = "2px solid green";
     finalScore++;
     finalScoreSpan.innerHTML = finalScore;
   } else {
     memberEl.innerHTML = "incorrect";
-    document.getElementById("answer").style.color = "red";
-    document.getElementById("question1").style.border = "2px solid red";
+    answer.style.color = "red";
+    question1.style.border = "2px solid red";
   }
 
   // check question 2
 
   if (nwjs2 === "attention") {
     debutSongEl.innerHTML = "correct";
-    document.getElementById("answer2").style.color = "green";
-    document.getElementById("question2").style.border = "2px solid green";
+    answer2.style.color = "green";
+    question2.style.border = "2px solid green";
     finalScore++;
     finalScoreSpan.innerHTML = finalScore;
   } else {
     debutSongEl.innerHTML = "incorrect";
-    document.getElementById("answer2").style.color = "red";
-    document.getElementById("question2").style.border = "2px solid red";
+    answer2.style.color = "red";
+    question2.style.border = "2px solid red";
   }
 
   // check question 3
@@ -55,14 +56,14 @@ function markQuizBtn() {
     nwjs3 === "vanessa kang"
   ) {
     guessMemberEl.innerHTML = "correct";
-    document.getElementById("answer3").style.color = "green";
-    document.getElementById("question3").style.border = "2px solid green";
+    answer3.style.color = "green";
+    question3.style.border = "2px solid green";
     finalScore++;
     finalScoreSpan.innerHTML = finalScore;
   } else {
     guessMemberEl.innerHTML = "incorrect";
-    document.getElementById("answer3").style.color = "red";
-    document.getElementById("question3").style.border = "2px solid red";
+    answer3.style.color = "red";
+    question3.style.border = "2px solid red";
   }
 
   // check question 4
@@ -75,20 +76,19 @@ function markQuizBtn() {
     nwjs4 === "asap"
   ) {
     getUpAlbum.innerHTML = "correct";
-    document.getElementById("answer4").style.color = "green";
-    document.getElementById("question4").style.border = "2px solid green";
+    answer4.style.color = "green";
+    question4.style.border = "2px solid green";
     finalScore++;
     finalScoreSpan.innerHTML = finalScore;
   } else {
     getUpAlbum.innerHTML = "incorrect";
-    document.getElementById("answer4").style.color = "red";
-    document.getElementById("question4").style.border = "2px solid red";
+    answer4.style.color = "red";
+    question4.style.border = "2px solid red";
   }
 
   // calculate percentage
   let percentage = (finalScoreSpan.innerHTML / 4) * 100;
-  document.getElementById("finalPercentage").innerHTML =
-    "(" + percentage + "%" + ")";
+  nwjsOverallScore.innerHTML = "(" + percentage + "%" + ")";
 
   // quiz feedback message
   if (finalScoreSpan.innerHTML == 4) {
@@ -99,7 +99,7 @@ function markQuizBtn() {
     message.innerHTML = "refresh the page and try again";
   } else if (finalScoreSpan.innerHTML == 1) {
     message.innerHTML =
-      "go back to doing your research and then redo this quiz. this was disappointing";
+      "go back to doing your research and then redo this quiz";
   } else {
     message.innerHTML = "do you even know newjeans?";
   }
